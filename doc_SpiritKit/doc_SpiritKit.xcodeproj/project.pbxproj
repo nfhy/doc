@@ -14,6 +14,10 @@
 		BD9804E31B789F29008EBB4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9804E21B789F29008EBB4F /* Images.xcassets */; };
 		BD9804E61B789F29008EBB4F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9804E41B789F29008EBB4F /* LaunchScreen.xib */; };
 		BD9804F21B789F29008EBB4F /* doc_SpiritKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9804F11B789F29008EBB4F /* doc_SpiritKitTests.m */; };
+		BD9805021B78A112008EBB4F /* PhysicsBodyAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9805011B78A112008EBB4F /* PhysicsBodyAbout.m */; };
+		BD9805041B78C1A0008EBB4F /* spiritKit in one frame.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD9805031B78C1A0008EBB4F /* spiritKit in one frame.jpeg */; };
+		BD9805411B7A0CC1008EBB4F /* SKNodeAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9805401B7A0CC1008EBB4F /* SKNodeAbout.m */; };
+		BD98054A1B7C19B3008EBB4F /* SKSceneAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9805491B7C19B3008EBB4F /* SKSceneAbout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 		BD9804EB1B789F29008EBB4F /* doc_SpiritKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = doc_SpiritKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9804F01B789F29008EBB4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9804F11B789F29008EBB4F /* doc_SpiritKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = doc_SpiritKitTests.m; sourceTree = "<group>"; };
+		BD9805011B78A112008EBB4F /* PhysicsBodyAbout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsBodyAbout.m; sourceTree = "<group>"; };
+		BD9805031B78C1A0008EBB4F /* spiritKit in one frame.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "spiritKit in one frame.jpeg"; path = "../../../../Documents/work/ios相关/spiritKit in one frame.jpeg"; sourceTree = "<group>"; };
+		BD9805401B7A0CC1008EBB4F /* SKNodeAbout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNodeAbout.m; sourceTree = "<group>"; };
+		BD9805491B7C19B3008EBB4F /* SKSceneAbout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSceneAbout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,7 @@
 		BD9804C91B789F28008EBB4F = {
 			isa = PBXGroup;
 			children = (
+				BD9804FF1B78A0F4008EBB4F /* DOC */,
 				BD9804D41B789F29008EBB4F /* doc_SpiritKit */,
 				BD9804EE1B789F29008EBB4F /* doc_SpiritKitTests */,
 				BD9804D31B789F29008EBB4F /* Products */,
@@ -117,6 +126,25 @@
 				BD9804F01B789F29008EBB4F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BD9804FF1B78A0F4008EBB4F /* DOC */ = {
+			isa = PBXGroup;
+			children = (
+				BD9805031B78C1A0008EBB4F /* spiritKit in one frame.jpeg */,
+				BD9805001B78A0FC008EBB4F /* physicsAbout */,
+			);
+			name = DOC;
+			sourceTree = "<group>";
+		};
+		BD9805001B78A0FC008EBB4F /* physicsAbout */ = {
+			isa = PBXGroup;
+			children = (
+				BD9805011B78A112008EBB4F /* PhysicsBodyAbout.m */,
+				BD9805401B7A0CC1008EBB4F /* SKNodeAbout.m */,
+				BD9805491B7C19B3008EBB4F /* SKSceneAbout.m */,
+			);
+			name = physicsAbout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +229,7 @@
 			files = (
 				BD9804E11B789F29008EBB4F /* Main.storyboard in Resources */,
 				BD9804E61B789F29008EBB4F /* LaunchScreen.xib in Resources */,
+				BD9805041B78C1A0008EBB4F /* spiritKit in one frame.jpeg in Resources */,
 				BD9804E31B789F29008EBB4F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +249,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9804DE1B789F29008EBB4F /* ViewController.m in Sources */,
+				BD9805021B78A112008EBB4F /* PhysicsBodyAbout.m in Sources */,
+				BD98054A1B7C19B3008EBB4F /* SKSceneAbout.m in Sources */,
 				BD9804DB1B789F29008EBB4F /* AppDelegate.m in Sources */,
+				BD9805411B7A0CC1008EBB4F /* SKNodeAbout.m in Sources */,
 				BD9804D81B789F29008EBB4F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +448,7 @@
 				BD9804F71B789F29008EBB4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD9804F81B789F29008EBB4F /* Build configuration list for PBXNativeTarget "doc_SpiritKitTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +457,7 @@
 				BD9804FA1B789F29008EBB4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
