@@ -18,6 +18,8 @@
 		BD9805041B78C1A0008EBB4F /* spiritKit in one frame.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD9805031B78C1A0008EBB4F /* spiritKit in one frame.jpeg */; };
 		BD9805411B7A0CC1008EBB4F /* SKNodeAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9805401B7A0CC1008EBB4F /* SKNodeAbout.m */; };
 		BD98054A1B7C19B3008EBB4F /* SKSceneAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9805491B7C19B3008EBB4F /* SKSceneAbout.m */; };
+		BDAA0D031B7E012000CC2399 /* SKPhysicsWorldAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = BDAA0D021B7E012000CC2399 /* SKPhysicsWorldAbout.m */; };
+		BDAA0D051B7ED39900CC2399 /* SKViewAbout.m in Sources */ = {isa = PBXBuildFile; fileRef = BDAA0D041B7ED39900CC2399 /* SKViewAbout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		BD9805031B78C1A0008EBB4F /* spiritKit in one frame.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "spiritKit in one frame.jpeg"; path = "../../../../Documents/work/ios相关/spiritKit in one frame.jpeg"; sourceTree = "<group>"; };
 		BD9805401B7A0CC1008EBB4F /* SKNodeAbout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNodeAbout.m; sourceTree = "<group>"; };
 		BD9805491B7C19B3008EBB4F /* SKSceneAbout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSceneAbout.m; sourceTree = "<group>"; };
+		BDAA0D021B7E012000CC2399 /* SKPhysicsWorldAbout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPhysicsWorldAbout.m; sourceTree = "<group>"; };
+		BDAA0D041B7ED39900CC2399 /* SKViewAbout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKViewAbout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +146,9 @@
 			children = (
 				BD9805011B78A112008EBB4F /* PhysicsBodyAbout.m */,
 				BD9805401B7A0CC1008EBB4F /* SKNodeAbout.m */,
+				BDAA0D021B7E012000CC2399 /* SKPhysicsWorldAbout.m */,
 				BD9805491B7C19B3008EBB4F /* SKSceneAbout.m */,
+				BDAA0D041B7ED39900CC2399 /* SKViewAbout.m */,
 			);
 			name = physicsAbout;
 			sourceTree = "<group>";
@@ -249,8 +255,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9804DE1B789F29008EBB4F /* ViewController.m in Sources */,
+				BDAA0D031B7E012000CC2399 /* SKPhysicsWorldAbout.m in Sources */,
 				BD9805021B78A112008EBB4F /* PhysicsBodyAbout.m in Sources */,
 				BD98054A1B7C19B3008EBB4F /* SKSceneAbout.m in Sources */,
+				BDAA0D051B7ED39900CC2399 /* SKViewAbout.m in Sources */,
 				BD9804DB1B789F29008EBB4F /* AppDelegate.m in Sources */,
 				BD9805411B7A0CC1008EBB4F /* SKNodeAbout.m in Sources */,
 				BD9804D81B789F29008EBB4F /* main.m in Sources */,

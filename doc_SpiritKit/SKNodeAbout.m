@@ -106,6 +106,7 @@ SK_EXPORT @interface SKNodeAbout : NSResponder <NSCopying, NSCoding>
 /**
  The speed multiplier applied to all actions run on this node. Inherited by its children.
  speed会改变action声明时设置的持续时间([SKAction moveTo: duration:])，同时action结束事件的触发事件也会提前或延后([self runAction: ompletion:])。
+ 根据实测，speed没有传递性，父node的speed属性不会影响子node的执行速度。
  */
 @property (nonatomic) CGFloat speed;
 

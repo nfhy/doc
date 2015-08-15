@@ -77,6 +77,9 @@ SK_EXPORT @interface SKSceneAbout : SKEffectNode
 /**
  Used to choose the origin of the scene's coordinate system
  anchorPoint处于本Scene的View坐标系中，anchorPoint和size一起决定了view中的哪一部分是可以显示的，他们共同决定了Scene的可见区域。
+ 根据实测，anchorPoint的xy值表示scene原点移动的比例。举例来说，scene的size是(100,100),scene坐标系原点在view中的坐标为(0,100),anchorPoint由(0,0)变为(0.1,0.2),那么原点在view中的坐标变为(110,80)(这是由于skscene与uiview的坐标系中Y轴方向相反)
+ 也就是说，anchorPoint的x变大，原点右移，y变大，原点上移。相应的，scene中的图像也将上移和右移。
+ 这里的anchorPoint概念非常不好理解，官方文档中也没有详细说明。如果不是非常必要，不建议在代码中修改这个参数。
  */
 @property (nonatomic) CGPoint anchorPoint;
 
@@ -85,6 +88,9 @@ SK_EXPORT @interface SKSceneAbout : SKEffectNode
  */
 @property (nonatomic, readonly) SKPhysicsWorld *physicsWorld;
 
+/**
+ The scene must be presented in a view before calling this method.
+ */
 - (CGPoint)convertPointFromView:(CGPoint)point;
 - (CGPoint)convertPointToView:(CGPoint)point;
 
@@ -101,7 +107,9 @@ SK_EXPORT @interface SKSceneAbout : SKEffectNode
 - (void)update:(NSTimeInterval)currentTime;
 
 /**
- Override this to perform game logic. Called exactly once per frame after any actions have been evaluated but before any physics are simulated. Any additional actions applied is not evaluated until the next update.
+ Override this to perform game logic. Called exactly once per frame after any actions have been evaluated but before any physics are simulated. 
+ Any additional actions applied is not evaluated until the next update.
+ 上面这句话的意思是，在didEvaluateActions这个方法中对Node的Action做出修改时，会在下一次调用update后生效。
  */
 - (void)didEvaluateActions;
 
@@ -118,7 +126,8 @@ SK_EXPORT @interface SKSceneAbout : SKEffectNode
 /**
  Override this to perform game logic. Called after all update logic has been completed. Any additional actions applied are not evaluated until the next update. Any changes to physics bodies are not simulated until the next update. Any changes to constarints will not be applied until the next update.
  
- No futher update logic will be applied to the scene after this call. Any values set on nodes here will be used when the scene is rendered for the current frame.
+ No futher update logic will be applied to the scene after this call. 
+ Any values set on nodes here will be used when the scene is rendered for the current frame.
  */
 - (void)didFinishUpdate NS_AVAILABLE(10_10, 8_0);
 

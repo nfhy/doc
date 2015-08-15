@@ -46,16 +46,18 @@
         t.physicsBody.angularDamping = 0.f;
         t.physicsBody.allowsRotation = YES;
         t.physicsBody.usesPreciseCollisionDetection = YES;
+        t.speed = 2.0;
         t.name = @"t";
         [_arr addObject:t];
         TestPhysicsBody * t1 = [[TestPhysicsBody alloc] initWithBodyCenter:CGPointMake(-1, -1)];
-        t1.physicsBody.affectedByGravity = NO;
+        t1.physicsBody.affectedByGravity = YES;
         t1.physicsBody.resting = YES;
         t1.physicsBody.mass = 0.1;
         t1.physicsBody.restitution = 0.f;
         t1.position = CGPointMake(size.width/2, size.height/2);
         t1.physicsBody.usesPreciseCollisionDetection = YES;
         t1.name = @"t1";
+        t1.speed = 0.5;
         [_arr addObject:t1];
 
         TestPhysicsBody * t2 = [[TestPhysicsBody alloc] initWithBodyCenter:CGPointMake(-1, -1)];

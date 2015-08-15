@@ -18,7 +18,7 @@ SKLabelNode * l1;
 SKLabelNode * l2;
 - (instancetype)initWithSize:(CGSize)size{
     if (self = [super initWithSize:size]) {
-        self.physicsWorld.contactDelegate = self;
+    /*    self.physicsWorld.contactDelegate = self;
         self.name = @"s";
         
         for (int i = 'a'; i <= 'j'; i++) {
@@ -36,11 +36,11 @@ SKLabelNode * l2;
     
     for (SKNode * node in [[self childNodeWithName:@"a 1 1"] objectForKeyedSubscript:@"..a*"]) {
         NSLog(@"%@",node.name);
-    }
+    }*/
         n = [SKNode node];
         n.position = CGPointMake(100, 100);
         l = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
-        l.position = CGPointMake(0, 0);
+        l.position = CGPointMake(100, 100);
         l.text = @"A";
         l.fontColor = [UIColor blackColor];
         l.fontSize = 40;
@@ -53,15 +53,17 @@ SKLabelNode * l2;
         l.physicsBody.categoryBitMask = 1<<2;
         l.physicsBody.contactTestBitMask = 1<<1;
         l.physicsBody.collisionBitMask = 1<<1;
-        [n addChild:l];
+        //[n addChild:l];
+        n.speed = 1.0;
+        l.speed = 2.f;
         l.paused = YES;
-        [self addChild:n];
+        [self addChild:l];
         l1 = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
         l1.position = CGPointMake(100, 100);
         l1.text = @"V";
         l1.fontColor = [UIColor redColor];
         l1.fontSize = 40;
-        l1.name = @"l";
+        l1.name = @"l1";
         l1.zPosition = 100;
         l1.speed = 2.f;
         SKPhysicsBody * body1 = [SKPhysicsBody bodyWithCircleOfRadius:20];
@@ -71,7 +73,7 @@ SKLabelNode * l2;
         l1.physicsBody.contactTestBitMask = 1<<1;
         l1.physicsBody.collisionBitMask = 1<<1;
         [self addChild:l1];
-        
+        l1.speed = 1.f;
         l2 = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
         l2.position = CGPointMake(100, 400);
         l2.text = @"O";
@@ -80,13 +82,14 @@ SKLabelNode * l2;
         l2.name = @"l2";
         SKPhysicsBody * body2 = [SKPhysicsBody bodyWithCircleOfRadius:20];
         l2.physicsBody = body2;
-        l2.physicsBody.affectedByGravity = NO;
+        l2.physicsBody.affectedByGravity = YES;
         l2.physicsBody.categoryBitMask = 1<<1;
         l2.physicsBody.contactTestBitMask = 1<<2;
         l2.physicsBody.collisionBitMask = 1<<2;
-        l2.paused = YES;
+        l2.paused = NO;
         [self addChild:l2];
-
+        self.physicsWorld.speed = 2.0;
+        self.speed = 3.0;
     }
     return self;
 }
@@ -114,10 +117,21 @@ SKLabelNode * l2;
         //l.paused = YES;
         //SKNode * node = [self childNodeWithName:@"l"];
         //node.alpha = 0;
-        NSLog(@"%f %f",l.position.x,l.position.y);
-        SKConstraint * con = [SKConstraint positionX:[SKRange rangeWithLowerLimit:0 upperLimit:100]];
-        l1.constraints = @[con];
-        
+        //NSLog(@"%f %f",l.position.x,l.position.y);
+        //SKConstraint * con = [SKConstraint positionX:[SKRange rangeWithLowerLimit:0 upperLimit:100]];
+        //l1.constraints = @[con];
+        CGPoint p = CGPointMake(70, 70);
+        SKPhysicsBody * body = [self.physicsWorld bodyAlongRayStart:p end:CGPointMake(150, 150)];
+        NSLog(@"%@",body.node.name);
+        body = [self.physicsWorld bodyAtPoint:p];
+        NSLog(@"%@",body.node.name);
+        [self.physicsWorld enumerateBodiesAlongRayStart:p end:CGPointMake(150, 150) usingBlock:^(SKPhysicsBody *body, CGPoint point, CGVector normal, BOOL *stop) {
+            NSLog(@"%f %f",normal.dx,normal.dy);
+        }];
+        [self.physicsWorld enumerateBodiesAtPoint:p usingBlock:^(SKPhysicsBody *body, BOOL *stop) {
+            NSLog(@"%@",body.node.name);
+        }];
+        self.view.paused = YES;
         b = NO;
     }
     /*if (b) {
